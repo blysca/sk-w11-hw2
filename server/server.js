@@ -49,4 +49,5 @@ server.get('/*', (req, res) => {
 
 server.listen(port)
 
+// eslint-disable-next-line no-console
 console.log(`Serving at http://localhost:${port}`)

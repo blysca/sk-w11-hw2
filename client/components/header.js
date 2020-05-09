@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
 
 const Header = () => {
-  const [toggled, toggle] = useState(false)
+  const [toggled, toggle] = useState(true)
 
   return (
     <nav className="flex items-center justify-between flex-wrap bg-teal-500 p-6">
@@ -24,9 +25,31 @@ const Header = () => {
           Tailwind CSS
         </button>
       </div>
+      <div className="text-sm lg:flex-grow">
+        <Link
+          to="/dashboard/"
+          className="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4"
+        >
+          Go To Root
+        </Link>
+        <Link
+          to="/dashboard/main"
+          className="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4"
+        >
+          Go To Main
+        </Link>
+        <Link
+          to="/dashboard/profile/27840f1c-9944-4878-b29c-916305bfdcfb"
+          className="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white"
+        >
+          Go To Profile
+        </Link>
+      </div>
+
       {toggled && (
         <div id="menu" className="block">
-          <button
+          <a
+            href="https://www.google.com/"
             type="button"
             className="flex items-center px-3 py-2 border rounded text-teal-200 border-teal-400 hover:text-white hover:border-white"
           >
@@ -38,7 +61,7 @@ const Header = () => {
               <title>Menu</title>
               <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
             </svg>
-          </button>
+          </a>
         </div>
       )}
     </nav>
